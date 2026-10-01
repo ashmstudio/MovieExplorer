@@ -1,56 +1,92 @@
-# Welcome to your Expo app 👋
+# ASHFLIX
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A simple mobile movie explorer application built with React Native and Expo.
 
-## Get started
+## About
 
-1. Install dependencies
+ASHFLIX is a multi-screen movie application where users can browse movies and view information about a selected movie.
 
-   ```bash
-   npm install
-   ```
+The project demonstrates basic React Native navigation, screen interaction, and passing data between screens.
 
-2. Start the app
+## Features
 
-   ```bash
-   npx expo start
-   ```
+- Movie collection
+- Movie posters
+- Movie ratings and genres
+- Movie details
+- Multiple screens
+- Stack navigation
+- Route parameters
+- Custom back button
+- Dark movie-themed interface
 
-In the output, you'll find options to open the app in a
+## Navigation Flow
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Home → Movie Collection → Movie Details → Back to Movies
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Main Files
 
-## Get a fresh project
+### App.js
+Sets up the application's navigation using `NavigationContainer` and `createNativeStackNavigator`.
 
-When you're ready, run:
+### HomeScreen.js
+Displays the ASHFLIX home screen and uses `navigation.navigate()` to open the movie collection.
 
-```bash
-npm run reset-project
-```
+### MovieListScreen.js
+Displays the movie collection using a JavaScript array and `.map()`.
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+When a movie is selected, its information is passed to the details screen using route parameters.
 
-### Other setup steps
+### MovieDetailsScreen.js
+Displays the selected movie's poster, title, year, genre, rating, and description.
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+It uses `route.params` to receive the selected movie and `navigation.goBack()` to return to the movie list.
 
-## Learn more
+## Technologies
 
-To learn more about developing your project with Expo, look at the following resources:
+- React Native
+- Expo
+- JavaScript
+- React Navigation
+- Native Stack Navigator
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Movie Collection
 
-## Join the community
+The current collection includes:
 
-Join our community of developers creating universal apps.
+- Inception
+- Interstellar
+- Spider-Man: Into the Spider-Verse
+- The Batman
+- Avengers: Endgame
+- How to Train Your Dragon
+- The Hunger Games
+- The Greatest Showman
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## How It Works
+
+The user starts on the Home screen and selects **Explore Movies**.
+
+The Movie Collection screen displays the available movies.
+
+Selecting a movie opens the Movie Details screen. The selected movie's information is passed through navigation parameters.
+
+The **Back to Movies** button uses `navigation.goBack()` to return to the movie collection.
+
+## Project Purpose
+
+The project was created to demonstrate basic mobile application development, multi-screen navigation, user interaction, and data passing in React Native.
+
+## Future Improvements
+
+- Search movies
+- Movie categories
+- Favorites
+- More movie collections
+- Improved filtering
+
+## Author
+
+**Ash**
+
+**ASH MOVIE EXPLORER • 2026**
