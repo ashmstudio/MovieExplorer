@@ -10,9 +10,6 @@ export default function HomeScreen({ navigation }) {
   return (
     <View style={styles.container}>
 
-      <View style={styles.topCircle} />
-      <View style={styles.smallCircle} />
-
       <Text style={styles.smallText}>
         MY MOVIE SPACE
       </Text>
@@ -21,10 +18,10 @@ export default function HomeScreen({ navigation }) {
         ASH<Text style={styles.red}>FLIX</Text>
       </Text>
 
-      <View style={styles.line} />
+      <View style={styles.accentLine} />
 
       <Text style={styles.description}>
-        My kind of movie night.
+        My kind of movie <Text style={styles.italic}>night.</Text>
       </Text>
 
       <TouchableOpacity
@@ -36,15 +33,9 @@ export default function HomeScreen({ navigation }) {
         </Text>
       </TouchableOpacity>
 
-      <View style={styles.bottomInfo}>
-        <Text style={styles.movieCount}>
-          8 MOVIES
-        </Text>
-
-        <Text style={styles.footer}>
-          ASH MOVIE EXPLORER • 2026
-        </Text>
-      </View>
+      <Text style={styles.footer}>
+        ASH MOVIE EXPLORER • 2026
+      </Text>
 
     </View>
   );
@@ -53,95 +44,67 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0D0D0D',
+    backgroundColor: '#080808',
     justifyContent: 'center',
     alignItems: 'center',
     padding: 25,
-    overflow: 'hidden',
-  },
-
-  topCircle: {
-    position: 'absolute',
-    width: 220,
-    height: 220,
-    borderRadius: 110,
-    backgroundColor: '#181818',
-    top: -100,
-    right: -80,
-  },
-
-  smallCircle: {
-    position: 'absolute',
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    backgroundColor: '#163522',
-    bottom: 90,
-    left: -35,
   },
 
   smallText: {
     color: '#69966C',
     fontSize: 12,
     letterSpacing: 2,
-    marginBottom: 10,
+    marginBottom: 25,
   },
 
   title: {
     color: '#FFFFFF',
-    fontSize: 44,
+    fontSize: 48,
     fontWeight: 'bold',
-    letterSpacing: 1,
   },
 
   red: {
-    color: '#DC143C',
+    color: '#FF5A52',
   },
 
-  line: {
-    width: 45,
-    height: 3,
-    backgroundColor: '#DC143C',
-    marginTop: 16,
-    marginBottom: 15,
+  accentLine: {
+    width: 80,
+    height: 5,
+    backgroundColor: '#FF5A52',
+    marginTop: 30,
+    marginBottom: 28,
+    borderRadius: 3,
   },
 
   description: {
-    color: '#BBBBBB',
-    fontSize: 15,
-    marginBottom: 30,
+    color: '#FFFFFF',
+    fontSize: 20,
+    marginBottom: 55,
+  },
+
+  italic: {
+    fontStyle: 'italic',
   },
 
   button: {
-    backgroundColor: '#DC143C',
-    paddingVertical: 15,
-    paddingHorizontal: 27,
-    borderRadius: 8,
+    backgroundColor: '#FF6B61',
+    paddingVertical: 20,
+    paddingHorizontal: 45,
+    borderRadius: 14,
   },
 
   buttonText: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     fontWeight: 'bold',
     letterSpacing: 1,
   },
 
-  bottomInfo: {
-    position: 'absolute',
-    bottom: 25,
-    alignItems: 'center',
-  },
-
-  movieCount: {
-    color: '#555555',
-    fontSize: 10,
-    letterSpacing: 2,
-    marginBottom: 6,
-  },
-
   footer: {
-    color: '#777777',
-    fontSize: 10,
+    position: 'absolute',
+    bottom: 30,
+    color: '#AAAAAA',
+    fontSize: 12,
     letterSpacing: 1,
   },
 });
